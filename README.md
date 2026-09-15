@@ -1,19 +1,29 @@
 # LinkNear 下载
 
-LinkNear 是局域网聊天与文件传输应用。本仓库只用于公开分发，应用源码单独维护。
+LinkNear 是局域网沟通与文件传输应用。本仓库用于公开分发，应用源码单独维护。
 
-[下载最新版本](https://github.com/qe1233/LinkNear-Releases/releases/latest)
+[查看最新版本](https://github.com/qe1233/LinkNear-Releases/releases/latest)
 
-目前支持 Apple Silicon Mac。下载 Release 中的 `LinkNear-v版本号-macos-arm64.zip`，退出旧版并将 LinkNear.app 放入“应用程序”。请勿下载 GitHub 自动生成的 Source code 压缩包作为安装包。
+| 平台 | v0.10.0 安装包 |
+| --- | --- |
+| Apple Silicon Mac | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.0/LinkNear-v0.10.0-macos-arm64.zip) |
+| Windows 10 / 11 x64 | [下载安装器](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.0/LinkNear-windows-x64-setup.exe) |
+| Android ARM64 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.0/LinkNear-android-arm64.apk) |
 
-v0.6.0 起可以通过侧栏“检查更新”下载更新，校验通过后点击“安装并重启”。旧版需手动覆盖安装一次。应用数据保存在本机，升级保留设备身份、联系人和聊天记录。
+Mac 解压后将 LinkNear.app 放入“应用程序”。Windows 运行安装器；若系统缺少 WebView2，安装器会获取 Microsoft 官方运行时。Android 使用系统安装器安装 APK。
+
+Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android 的“下载与更新”打开官方发布页，由系统安装器确认覆盖升级。升级保留设备身份、联系人和普通聊天记录。
+
+## Android 首版范围
+
+已完成 Android 15 ARM64 模拟器验收，支持联系人、聊天、图片、视频、文件和单对单临时会话。视频使用原生播放器；临时视频按需从加密缓存读取，结束会话会关闭播放器。请在传输期间保持应用前台；首版暂不提供文件夹选择和系统回收站清理。
 
 ## 安全
 
-- 更新包使用独立签名，应用内置公钥并在安装前验签，同时核对包内版本和应用身份。
-- 正式 Release 开启不可变发布；本仓库关闭 Actions，不通过外部 PR 自动构建或发布。
-- 检查更新访问 GitHub，但不上传聊天内容、联系人或文件。
-- 当前为开发分发版本，尚未 Apple Developer ID 签名或公证；首次安装可能出现 macOS 安全提示。请勿为安装全局关闭 Gatekeeper。
-- 发布签名代表来源和完整性，不保证软件不存在漏洞。首次安装请核对仓库所有者为 qe1233。
+- Mac 与 Windows 更新包使用独立签名。发布私钥保留在本机，私有仓库的 Windows Actions 仅手动构建，不持有签名私钥。
+- Android APK 使用固定发布证书。后续覆盖升级由系统核对签名；[公开证书指纹](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.0/android-signing-certificate.sha256)随安装包发布。
+- 正式 Release 开启不可变发布；本分发仓库关闭 Actions。每次发布附带 SHA256SUMS.txt。
+- 检查更新访问 GitHub，不上传聊天内容、联系人或传输文件。局域网沟通无需互联网。
+- macOS 尚未使用 Apple Developer ID 签名或公证；Windows 尚未使用商业 Authenticode 证书，首次安装可能显示未知发布者提示。签名校验保证来源和完整性，不代表软件没有漏洞。
 
-请勿在公开反馈中上传聊天记录、联系方式、身份密钥或包含私人信息的日志。
+请在公开反馈中仅提供合成测试内容，避免上传私人聊天记录、联系方式或身份密钥。
