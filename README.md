@@ -6,13 +6,21 @@ LinkNear 是局域网沟通与文件传输应用。本仓库用于公开分发�
 
 | 平台 | 当前版本 | 安装包 |
 | --- | --- | --- |
-| Apple Silicon Mac | v0.10.6 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.6/LinkNear-v0.10.6-macos-arm64.zip) |
+| Apple Silicon Mac | v0.10.7 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.7/LinkNear-v0.10.7-macos-arm64.zip) |
 | Windows 10 / 11 x64 | v0.10.1 | [下载安装器](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.1/LinkNear-windows-x64-setup.exe) |
-| Android ARM64 | v0.10.6 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.6/LinkNear-android-arm64.apk) |
+| Android ARM64 | v0.10.7 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.7/LinkNear-android-arm64.apk) |
 
 Mac 解压后将 LinkNear.app 放入“应用程序”。Windows 运行安装器；若系统缺少 WebView2，安装器会获取 Microsoft 官方运行时。Android 使用系统安装器安装 APK。
 
 Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android v0.10.4 起支持应用内检查更新、下载安装包并交由系统安装器确认覆盖升级，旧版可从官方发布页下载安装。升级保留设备身份、联系人和普通聊天记录。v0.10.1 起 Mac 与 Windows 使用独立更新通道，今后可分别发布；旧版可先通过兼容清单升级到 v0.10.1。
+
+## v0.10.7 改进
+
+- 存储管理显示应用、数据、缓存和下载占用，以及磁盘可用空间；手机页面采用紧凑筛选。
+- 手动聊天清理增加最近 15 分钟、自定义起止时间和指定时间之前。
+- 定期清理默认关闭，确认启用后按保留天数清理过期记录，实际文件保留；应用关闭时不运行，下次启动补做。
+- Android 可在存储管理中删除本应用拥有的文件，删除前二次确认，不提供系统回收站恢复。
+- Windows 保持 v0.10.1，独立更新通道不变。
 
 ## v0.10.6 改进
 
@@ -43,7 +51,7 @@ Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装�
 ## 安全
 
 - Mac 与 Windows 更新包使用独立签名。发布私钥保留在本机，私有仓库的 Windows Actions 仅手动构建，不持有签名私钥。
-- Android APK 使用固定发布证书。后续覆盖升级由系统核对签名；[公开证书指纹](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.6/android-signing-certificate.sha256)随安装包发布。
+- Android APK 使用固定发布证书。后续覆盖升级由系统核对签名；[公开证书指纹](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.7/android-signing-certificate.sha256)随安装包发布。
 - 正式 Release 开启不可变发布；本分发仓库关闭 Actions。每次发布附带 SHA256SUMS.txt。
 - 检查更新访问 GitHub，不上传聊天内容、联系人或传输文件。局域网沟通无需互联网。
 - macOS 尚未使用 Apple Developer ID 签名或公证；Windows 尚未使用商业 Authenticode 证书，首次安装可能显示未知发布者提示。签名校验保证来源和完整性，不代表软件没有漏洞。
