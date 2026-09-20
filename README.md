@@ -6,13 +6,20 @@ LinkNear 是局域网沟通与文件传输应用。本仓库用于公开分发�
 
 | 平台 | 当前版本 | 安装包 |
 | --- | --- | --- |
-| Apple Silicon Mac | v0.10.9 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.9/LinkNear-v0.10.9-macos-arm64.zip) |
+| Apple Silicon Mac | v0.10.10 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.10/LinkNear-v0.10.10-macos-arm64.zip) |
 | Windows 10 / 11 x64 | v0.10.1 | [下载安装器](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.1/LinkNear-windows-x64-setup.exe) |
-| Android ARM64 | v0.10.9 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.9/LinkNear-android-arm64.apk) |
+| Android ARM64 | v0.10.10 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.10/LinkNear-android-arm64.apk) |
 
 Mac 解压后将 LinkNear.app 放入“应用程序”。Windows 运行安装器；若系统缺少 WebView2，安装器会获取 Microsoft 官方运行时。Android 使用系统安装器安装 APK。
 
 Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android v0.10.4 起支持应用内检查更新、下载安装包并交由系统安装器确认覆盖升级，旧版可从官方发布页下载安装。升级保留设备身份、联系人和普通聊天记录。v0.10.1 起 Mac 与 Windows 使用独立更新通道，今后可分别发布；旧版可先通过兼容清单升级到 v0.10.1。
+
+## v0.10.10 改进
+
+- 删除的聊天记录不再能被恢复：清理记录、定期清理、删除联系人和删除群聊会在删除后覆写释放的数据页并压缩数据库文件，用恢复工具扫描本机数据库不再能读出已删内容。
+- 升级备份不再无限堆积：只保留最近一份回滚点，并在 30 天后自动覆写删除。历史备份是完整快照，会包含删除前的内容。
+- 清理确认页与完成提示明确说明已覆写、不可恢复；压缩未完成会提示重试。
+- 边界：关闭的是读取本机数据库这条恢复路径；APFS 写时复制、SSD 磨损均衡、Time Machine 与系统快照不在应用可控范围。实体文件在 Mac 上仍移入废纸篓。
 
 ## v0.10.9 改进
 
@@ -64,7 +71,7 @@ Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装�
 ## 安全
 
 - Mac 与 Windows 更新包使用独立签名。发布私钥保留在本机，私有仓库的 Windows Actions 仅手动构建，不持有签名私钥。
-- Android APK 使用固定发布证书。后续覆盖升级由系统核对签名；[公开证书指纹](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.9/android-signing-certificate.sha256)随安装包发布。
+- Android APK 使用固定发布证书。后续覆盖升级由系统核对签名；[公开证书指纹](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.10/android-signing-certificate.sha256)随安装包发布。
 - 正式 Release 开启不可变发布；本分发仓库关闭 Actions。每次发布附带 SHA256SUMS.txt。
 - 检查更新访问 GitHub，不上传聊天内容、联系人或传输文件。局域网沟通无需互联网。
 - macOS 尚未使用 Apple Developer ID 签名或公证；Windows 尚未使用商业 Authenticode 证书，首次安装可能显示未知发布者提示。签名校验保证来源和完整性，不代表软件没有漏洞。
