@@ -6,13 +6,20 @@ LinkNear 是局域网沟通与文件传输应用。本仓库用于公开分发�
 
 | 平台 | 当前版本 | 安装包 |
 | --- | --- | --- |
-| Apple Silicon Mac | v0.10.14 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.14/LinkNear-v0.10.14-macos-arm64.zip) |
+| Apple Silicon Mac | v0.11.2 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.11.2/LinkNear-v0.11.2-macos-arm64.zip) |
 | Windows 10 / 11 x64 | v0.10.1 | [下载安装器](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.1/LinkNear-windows-x64-setup.exe) |
-| Android ARM64 | v0.10.14 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.10.14/LinkNear-android-arm64.apk) |
+| Android ARM64 | v0.11.2 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.11.2/LinkNear-android-arm64.apk) |
 
 Mac 解压后将 LinkNear.app 放入“应用程序”。Windows 运行安装器；若系统缺少 WebView2，安装器会获取 Microsoft 官方运行时。Android 使用系统安装器安装 APK。
 
 Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android v0.10.4 起支持应用内检查更新、下载安装包并交由系统安装器确认覆盖升级，旧版可从官方发布页下载安装。升级保留设备身份、联系人和普通聊天记录。v0.10.1 起 Mac 与 Windows 使用独立更新通道，今后可分别发布；旧版可先通过兼容清单升级到 v0.10.1。
+
+## v0.11.2 改进
+
+- 私聊、群聊、临时会话和搜索结果里的 http、https 和 www 地址可以点击，并用系统浏览器打开。file 和其他协议不会打开。
+- 图片预览缓存每天自动清除，再次查看时重新生成。已接收文件、粘贴原图、升级备份和聊天记录不会因此删除。
+- 联系人列表加宽，群聊列表收短，联系人头像和名字加大。
+- Windows 保持 v0.10.1。普通聊天、群聊和文件传输协议不变。
 
 ## v0.10.14 改进
 
