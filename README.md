@@ -6,13 +6,21 @@ LinkNear 是局域网沟通与文件传输应用。本仓库用于公开分发�
 
 | 平台 | 当前版本 | 安装包 |
 | --- | --- | --- |
-| Apple Silicon Mac | v0.12.3 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.12.3/LinkNear-v0.12.3-macos-arm64.zip) |
+| Apple Silicon Mac | v0.12.4 | [下载 ZIP](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.12.4/LinkNear-v0.12.4-macos-arm64.zip) |
 | Windows 10 / 11 x64 | v0.12.3 | [下载安装器](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.12.3/LinkNear-windows-x64-setup.exe) |
-| Android ARM64 | v0.12.3 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.12.3/LinkNear-android-arm64.apk) |
+| Android ARM64 | v0.12.4 | [下载 APK](https://github.com/qe1233/LinkNear-Releases/releases/download/v0.12.4/LinkNear-android-arm64.apk) |
 
 Mac 解压后将 LinkNear.app 放入“应用程序”。Windows 运行安装器；若系统缺少 WebView2，安装器会获取 Microsoft 官方运行时。Android 使用系统安装器安装 APK。
 
-Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android v0.10.4 起支持应用内检查更新、下载安装包并交由系统安装器确认覆盖升级，旧版可从官方发布页下载安装。升级保留设备身份、联系人和普通聊天记录。Mac、Windows 和 Android 使用各自更新清单。本次 Mac、Windows 和 Android 的安装包均为 v0.12.3。
+Mac 和 Windows 可以通过侧栏“检查更新”下载安装新版，安装前会校验更新签名和包内版本。Android v0.10.4 起支持应用内检查更新、下载安装包并交由系统安装器确认覆盖升级，旧版可从官方发布页下载安装。升级保留设备身份、联系人和普通聊天记录。Mac、Windows 和 Android 使用各自更新清单。Mac 和 Android 最新版为 v0.12.4，Windows 最新版为 v0.12.3。
+
+## v0.12.4 改进
+
+- Mac ARM64 和 Android ARM64 的密码库采用新的解锁页。Mac 支持用已绑定的手机解锁，Android 支持用本机指纹解锁，主密码入口在两端均可用。
+- 切换窗口或应用时隐藏已经显示的密码与密钥，闲置 3 分钟后自动锁定。切换条目、返回列表、导入或关闭前，可以保存、放弃或继续编辑未保存的草稿。
+- 搜索结果与条目详情同步。Android 上的长密钥随详情页滚动，复制按钮留在标题旁。
+- Mac 的导入选择器附在主窗口上，选完文件后可从锁定页继续。主密码错误显示在输入框旁，手机解绑入口移入设备管理。
+- Windows x64 当前版本为 v0.12.3。
 
 ## v0.12.3 改进
 
